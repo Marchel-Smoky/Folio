@@ -1,0 +1,109 @@
+/* 🔹 Reset dan font dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.9; /* spasi antar baris lebih besar */
+    padding: 0;
+}
+
+/* 🔹 Header */
+header {
+    background-color: #222;
+    color: white;
+    padding: 20px 15px;
+    text-align: center;
+}
+
+/* 🔹 Navigasi */
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* 🔹 Konten Utama */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* 🔹 Konten yang bisa diganti */
+.konten {
+    display: none;
+    margin-top: 20px;
+}
+
+.konten.aktif {
+    display: block;
+}
+
+/* 🔹 Judul */
+h2 {
+    color: #007BFF;
+    margin-bottom: 15px;
+}
+
+/* 🔹 List */
+ul {
+    padding-left: 25px;
+    margin-top: 10px;
+}
+
+/* 🔹 Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #222;
+    color: white;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+/* 🔹 Responsif untuk tablet dan HP */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+    }
+}
