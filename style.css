@@ -9,16 +9,27 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    line-height: 1.9; /* spasi antar baris lebih besar */
+    line-height: 1.9;
     padding: 0;
 }
 
-/* 🔹 Header */
+/* 🔹 Header dengan animasi gradasi */
 header {
-    background-color: #222;
+    background: linear-gradient(270deg, #222, #660202, #078f94, #04c4c4, #2d1b57);
+    background-size: 800% 800%;
+    animation: bgMove 10s ease infinite;
     color: white;
     padding: 20px 15px;
-    text-align: center;
+    text-align: left; /* rata kiri */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Animasi gradasi bergerak */
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* 🔹 Navigasi */
@@ -32,16 +43,33 @@ nav a {
     margin: 0 15px;
     font-weight: bold;
     font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #ffeb3b;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 /* 🔹 Konten Utama */
 main {
     padding: 20px;
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -77,11 +105,65 @@ footer {
     font-size: 0.9rem;
 }
 
-/* 🔹 Responsif untuk tablet dan HP */
+/* 🔹 Layout Horizontal Scroll untuk Tentang Saya, Produk, dll */
+.horizontal-scroll {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 250px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.card .content {
+    padding: 10px;
+}
+
+.card .content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.card .content p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 🔹 Responsif tetap horizontal di HP */
 @media (max-width: 768px) {
     nav a {
-        display: block;
-        margin: 10px 0;
+        display: inline-block;
+        margin: 8px 8px;
         font-size: 1rem;
     }
 
@@ -97,6 +179,7 @@ footer {
 
     header {
         padding: 15px;
+        font-size: 1.3rem;
     }
 
     h2 {
