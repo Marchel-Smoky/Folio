@@ -20,7 +20,7 @@ header {
     animation: bgMove 10s ease infinite;
     color: white;
     padding: 20px 15px;
-    text-align: left; /* rata kiri */
+    text-align: center; /* rata kiri */
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -190,3 +190,4 @@ footer {
         font-size: 0.95rem;
     }
 }
+
