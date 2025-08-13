@@ -31,6 +31,42 @@ header {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+.logo-container {
+  position: relative;
+  display: inline-block;
+}
+
+.logo-rotate {
+  width: 200px; /* ukuran logo */
+  height: 200px;
+  border-radius: 20%;
+  animation: rotateLogo 8s linear infinite;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0; /* di belakang teks */
+  opacity: 0.8; /* sedikit transparan supaya teks lebih jelas */
+}
+
+.logo-text {
+  position: relative;
+  z-index: 1; /* di atas logo */
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+@keyframes rotateLogo {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
 
 /* 🔹 Navigasi */
 nav {
@@ -190,4 +226,3 @@ footer {
         font-size: 0.95rem;
     }
 }
-
