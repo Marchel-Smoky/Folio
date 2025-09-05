@@ -5,13 +5,34 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%;
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #0f0f1a, #1a1a2e, #16213e);
   color: #f1f1f1;
-  min-height: 100vh;
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+/* ===== Layout ===== */
+.layout {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(20, 20, 40, 0.9);
+  backdrop-filter: blur(10px);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* ===== Header ===== */
@@ -50,6 +71,12 @@ header {
 }
 
 /* ===== Navigation ===== */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 nav a {
   color: #f1f1f1;
   text-decoration: none;
@@ -79,10 +106,6 @@ nav a:hover::after {
 }
 
 /* ===== Section Content ===== */
-main {
-  padding: 2rem;
-}
-
 .konten {
   display: none;
   animation: fadeIn 1s ease;
@@ -134,31 +157,76 @@ h2 {
   text-align: center;
 }
 
-/* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: rgba(20, 20, 40, 0.9);
-  backdrop-filter: blur(10px);
-  margin-top: 3rem;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-/* Layout agar footer selalu di bawah */
-html, body {
-  height: 100%;
-}
-
-.layout {
-  min-height: 100%;
+/* ===== Splash screen ===== */
+#splash {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #000;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  z-index: 9999;
 }
 
-main {
-  flex: 1; /* biar konten dorong footer ke bawah */
+#splash canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
 }
 
+#splash img {
+  width: 150px;
+  opacity: 0;
+  animation: fadeInScale 2s forwards;
+  z-index: 2;
+}
+
+#splash h1 {
+  font-size: 2.5rem;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 2s;
+  z-index: 2;
+}
+
+#splash p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  white-space: nowrap;
+  border-right: 2px solid #0ff;
+  overflow: hidden;
+  min-height: 1.5em;
+  z-index: 2;
+}
+
+#splash .welcome {
+  font-size: 1.8rem;
+  margin-top: 15px;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 8s;
+  z-index: 2;
+}
+
+.hide-splash {
+  animation: fadeOut 1s forwards;
+}
+
+/* ===== Neon Gradient Text ===== */
+.neon-text {
+  background: linear-gradient(90deg, #00fff7, #ff00e1, #00ff95, #ffea00);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite, glowPulse 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 10px rgba(0,255,200,0.6), 0 0 20px rgba(255,0,200,0.6);
+}
 
 /* ===== Animations ===== */
 @keyframes rotateLogo {
@@ -171,224 +239,60 @@ main {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeInScale {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
 @keyframes slideDown {
   from { transform: translateY(-100%); }
   to { transform: translateY(0); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glowPulse {
+  from { text-shadow: 0 0 10px rgba(0,255,200,0.6), 0 0 20px rgba(255,0,200,0.6); }
+  to { text-shadow: 0 0 25px rgba(255,255,0,0.9), 0 0 40px rgba(0,255,255,0.8); }
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
+    padding: 1rem;
     gap: 1rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
   }
 
   nav a {
     margin: 0.5rem;
   }
 
-  .horizontal-scroll {
-    flex-direction: column;
-    align-items: center;
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  #splash h1 {
+    font-size: 2rem;
+  }
+
+  #splash .welcome {
+    font-size: 1.4rem;
   }
 
   .card {
-    width: 90%;
+    flex: 0 0 90%;
   }
-}
-/* Splash screen */
-#splash {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  flex-direction: column;
-  overflow: hidden;
-  color: white;
-  text-align: center;
-}
-#splash canvas {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-}
-#splash img {
-  width: 150px;
-  opacity: 0;
-  animation: fadeInScale 2s forwards;
-  z-index: 2;
-}
-#splash h1 {
-  font-size: 2rem;
-  margin-top: 20px;
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-  animation-delay: 2s;
-  z-index: 2;
-}
-#splash p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  color: #0ff;
-  white-space: nowrap;
-  border-right: 2px solid #0ff;
-  overflow: hidden;
-  min-height: 1.5em;
-  z-index: 2;
-}
-#splash .welcome {
-  font-size: 1.5rem;
-  margin-top: 15px;
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-  animation-delay: 8s;
-  z-index: 2;
-}
-@keyframes fadeInScale {
-  from { transform: scale(0.5); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-.hide-splash {
-  animation: fadeOut 1s forwards;
-}
-@keyframes fadeOut {
-  to { opacity: 0; visibility: hidden; }
-}
-
-/* Layout agar footer selalu di bawah */
-html, body {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-.layout {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-main {
-  flex: 1;
-}
-footer {
-  background: #111;
-  color: #ccc;
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
-}
-/* Splash screen */
-#splash {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  flex-direction: column;
-  overflow: hidden;
-  color: white;
-  text-align: center;
-}
-#splash canvas {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-}
-#splash img {
-  width: 150px;
-  opacity: 0;
-  animation: fadeInScale 2s forwards;
-  z-index: 2;
-}
-#splash h1 {
-  font-size: 2.5rem;
-  margin-top: 20px;
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-  animation-delay: 2s;
-  z-index: 2;
-}
-#splash p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  white-space: nowrap;
-  border-right: 2px solid #0ff;
-  overflow: hidden;
-  min-height: 1.5em;
-  z-index: 2;
-}
-#splash .welcome {
-  font-size: 1.8rem;
-  margin-top: 15px;
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-  animation-delay: 8s;
-  z-index: 2;
-}
-@keyframes fadeInScale {
-  from { transform: scale(0.5); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-.hide-splash {
-  animation: fadeOut 1s forwards;
-}
-@keyframes fadeOut {
-  to { opacity: 0; visibility: hidden; }
-}
-
-/* Neon gradient text */
-.neon-text {
-  background: linear-gradient(90deg, #00fff7, #ff00e1, #00ff95, #ffea00);
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientShift 6s ease infinite, glowPulse 2s ease-in-out infinite alternate;
-  text-shadow: 0 0 10px rgba(0,255,200,0.6), 0 0 20px rgba(255,0,200,0.6);
-}
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-@keyframes glowPulse {
-  from { text-shadow: 0 0 10px rgba(0,255,200,0.6), 0 0 20px rgba(255,0,200,0.6); }
-  to { text-shadow: 0 0 25px rgba(255,255,0,0.9), 0 0 40px rgba(0,255,255,0.8); }
-}
-
-/* Layout agar footer selalu di bawah */
-html, body {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: #eee;
-}
-.layout {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-main {
-  flex: 1;
-}
-footer {
-  background: #111;
-  color: #ccc;
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
 }
