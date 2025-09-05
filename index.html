@@ -1,137 +1,105 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="brow.ico" type="image/x-icon">
-    <meta name="description" content="Portofolio pribadi SmoKey, seorang Engineer dengan keahlian di bidang Proyek, Mesin, dan Listrik. Menawarkan layanan konsultasi teknik dan manajerial.">
-    <title>Portofolio Saya</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <title>Portofolio Saya</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Splash screen -->
+  <div id="splash">
+    <canvas id="particles"></canvas>
+    <img src="logo_bg_white.png" alt="Logo SmoKey">
+    <h1 class="neon-text">SMOKEY</h1>
+    <p id="typing-text" class="neon-text"></p>
+    <div class="welcome neon-text">Welcome</div>
+  </div>
 
+  <div class="layout" style="display:none; flex-direction: column; min-height: 100vh;">
     <header>
-        <div class="logo-container">
-            <img src="brow.ico" alt="Logo" class="logo-rotate">
-            <span class="logo-text">SMOKEY</span>
-        </div>
-
-        <nav>
-            <a href="#" onclick="tampilkanSection('tentang')">Tentang Saya</a>
-            <a href="#" onclick="tampilkanSection('produk')">Produk</a>
-            <a href="#" onclick="tampilkanSection('layanan')">Layanan</a>
-            <a href="#" onclick="tampilkanSection('kontak')">Kontak</a>
-            <a href="#" onclick="tampilkanSection('Motifasi')">Motivasi</a>
-        </nav>
+      <div class="logo-container">
+        <img src="logo_bg_white.png" alt="Logo" />
+        <span class="logo-text">SMOKEY</span>
+      </div>
+      <nav>
+        <a href="#" onclick="tampilkanSection('tentang')">Tentang Saya</a>
+        <a href="#" onclick="tampilkanSection('produk')">Produk</a>
+        <a href="#" onclick="tampilkanSection('layanan')">Layanan</a>
+        <a href="#" onclick="tampilkanSection('kontak')">Kontak</a>
+        <a href="#" onclick="tampilkanSection('Motifasi')">Motivasi</a>
+      </nav>
     </header>
 
-    <main>
-        <section id="tentang" class="konten aktif">
-            <h2>Tentang Saya</h2>
-            <p>
-            Saya adalah seorang <strong>Engineer</strong> dengan latar belakang pendidikan dan pengalaman yang solid di bidang <strong>Proyek, Mesin, dan Listrik</strong>. Perjalanan saya dimulai dari <strong>SMK Teknik Alat Berat</strong>, di mana saya mempelajari secara mendalam mengenai mekanikal, permesinan, dan sistem kerja alat berat. Setelah itu, saya melanjutkan pendidikan ke jenjang <strong>S1 Teknik Sipil</strong>, yang membekali saya dengan kemampuan perencanaan, desain, serta manajemen proyek konstruksi secara menyeluruh.
-        </p>
+    <main style="flex:1;">
+      <section id="tentang" class="konten aktif">
+        <h2>Tentang Saya</h2>
         <p>
-            Perpaduan kedua disiplin ilmu tersebut menjadikan saya memiliki pemahaman yang luas dan komprehensif terhadap berbagai aspek teknis maupun manajerial di dunia teknik. Saya terbiasa menangani proyek yang menuntut ketelitian, kecepatan pengambilan keputusan, dan koordinasi yang baik antara berbagai pihak.
+          Saya adalah seorang <strong>Engineer</strong> dengan latar belakang pendidikan dan pengalaman
+          yang solid di bidang <strong>Proyek, Mesin, dan Listrik</strong>...
         </p>
-        <p>
-            Selain keahlian teknis, saya juga menawarkan jasa sebagai <strong>asisten atau rekan kerja terpercaya</strong> yang dapat diandalkan untuk membantu menyelesaikan pekerjaan secara efektif dan efisien. Kepercayaan adalah hal yang saya jaga dengan sungguh-sungguh, karena bagi saya, hubungan kerja yang baik berawal dari saling menghargai dan menjaga komitmen.
-        </p>
-        <p>
-            Salah satu kekuatan saya adalah <strong>kemampuan untuk cepat mempelajari hal-hal baru</strong>. Saya selalu terbuka untuk memperluas wawasan dan keterampilan, baik melalui pengalaman langsung di lapangan, pembelajaran mandiri, maupun mengikuti perkembangan teknologi terbaru. Dengan sikap adaptif ini, saya mampu menyesuaikan diri terhadap berbagai tantangan dan menemukan solusi yang kreatif serta tepat guna.
-        </p>
-        <p>
-            Prinsip kerja saya sederhana namun tegas: <em>bekerja dengan dedikasi, menjaga integritas, dan memberikan hasil terbaik</em>. Saya percaya bahwa kesuksesan sebuah proyek bukan hanya diukur dari hasil akhirnya, tetapi juga dari proses, kerja sama tim, dan kepuasan semua pihak yang terlibat.
-        </p>
-        </section>
+      </section>
 
-        <section id="layanan" class="konten">
-            <h2>Layanan</h2>
-<ul>
-    <li>Konsultasi Proyek Teknik Sipil</li>
-    <li>Perencanaan & Pengawasan Teknik</li>
-    <li>Instalasi & Pemeliharaan Listrik</li>
-    <li>Asisten Teknis & Manajerial</li>
-    <li>Solusi Inovatif untuk Masalah Teknis</li>
-    <li>Pembuatan Website (Company Profile, Portofolio, Toko Online, dll.)</li>
-</ul>
-        </section>
+      <section id="layanan" class="konten">
+        <h2>Layanan</h2>
+        <ul>
+          <li>Konsultasi Proyek Teknik Sipil</li>
+          <li>Perencanaan & Pengawasan Teknik</li>
+          <li>Instalasi & Pemeliharaan Listrik</li>
+          <li>Asisten Teknis & Manajerial</li>
+          <li>Solusi Inovatif untuk Masalah Teknis</li>
+          <li>Pembuatan Website (Company Profile, Portofolio, Toko Online, dll.)</li>
+        </ul>
+      </section>
 
-        <section id="produk" class="konten">
+      <section id="produk" class="konten">
+        <h2>Produk</h2>
+        <div class="horizontal-scroll">
+          <div class="card">
+            <img src="gambar1.jpg" alt="Produk" />
+            <div class="content">
+              <h3>Produk Belum Tersedia</h3>
+              <p>_____</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="gambar2.jpg" alt="Produk" />
+            <div class="content">
+              <h3>Produk Belum Tersedia</h3>
+              <p>_____</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="gambar3.jpg" alt="Produk" />
+            <div class="content">
+              <h3>Produk Belum Tersedia</h3>
+              <p>_____</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <div class="horizontal-scroll">
+      <section id="kontak" class="konten">
+        <h2>Kontak</h2>
+        <p>Email: achelsmoky@gmail.com</p>
+        <p>Telepon: 0853-9693-9123</p>
+        <p>Alamat: Manado, Indonesia</p>
+      </section>
 
-                            <div class="card">
-                                    <img src="gambar1.jpg" alt="Produk">
-
-                                    <div class="content">
-
-                                    <h3>Produk Belum Tersedia</h3>
-
-                                    <p>_____</p>
-
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                    <img src="gambar2.jpg" alt="Produk">
-
-                                    <div class="content">
-
-                                    <h3>Produk Belum Tersedia</h3>
-                                    <p>_____</p>
-                                    </div>
-
-                            </div>
-
-                            <div class="card">
-
-                                    <img src="gambar3.jpg" alt="Produk">
-
-                                    <div class="content">
-
-                                    <h3>Produk Belum Tersedia</h3>
-                                    <p>_____</p>
-
-                            </div>
-                        </div>
-                    </div>
-
-        </section>  
-
-        <section id="kontak" class="konten">
-            <h2>Kontak</h2>
-            <p>Email: achelsmoky@gmail.com</p>
-            <p>Telepon: 0853-9693-9123</p>
-            <p>Alamat: Manado, Indonesia</p>
-        </section>
-
-        <section id="Motifasi" class="konten">
-            <h2>Motivasi</h2>
-                <p>
-                    "Setiap tantangan adalah kesempatan untuk belajar dan tumbuh. Dengan kerja keras, dedikasi, dan semangat pantang menyerah, tidak ada yang tidak mungkin dicapai."
-                </p>
-                <p>
-                    "Keberhasilan bukan hanya tentang apa yang kita capai, tetapi juga tentang bagaimana kita menginspirasi orang lain untuk mencapai potensi terbaik mereka."
-                </p>
-                <p>
-                    "Di tengah ribuan ketidakmungkinan, selalu ada satu jalan keluar. Aku tidak ingin menyesal hanya karena tidak pernah mencoba."
-                </p>
-            </section>
-
+      <section id="Motifasi" class="konten">
+        <h2>Motivasi</h2>
+        <p>"Setiap tantangan adalah kesempatan untuk belajar dan tumbuh..."</p>
+        <p>"Keberhasilan bukan hanya tentang apa yang kita capai..."</p>
+        <p>"Di tengah ribuan ketidakmungkinan, selalu ada satu jalan keluar..."</p>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 SmoKey. Semua Hak Dilindungi.</p>
+      <p>&copy; 2025 SmoKey. Semua Hak Dilindungi.</p>
     </footer>
+  </div>
 
-    <script>
-        function tampilkanSection(id) {
-            const semuaSection = document.querySelectorAll('.konten');
-            semuaSection.forEach(sec => sec.classList.remove('aktif'));
-            document.getElementById(id).classList.add('aktif');
-        }
-    </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
