@@ -3,100 +3,709 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <title>Portofolio Saya</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Portofolio profesional Marchel Victhor Kamagi - Professional Engineer & Supervisor spesialis konstruksi jalan, jembatan, dan gedung">
+  <meta name="keywords" content="Marchel Victhor Kamagi, Teknik Sipil, Konsultan Supervisi, Konstruksi, Engineer Professional">
+  <meta name="author" content="Marchel Victhor Kamagi">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Marchel Victhor Kamagi - Professional Engineer & Supervisor">
+  <meta property="og:description" content="Ahli Struktur Konstruksi dengan spesialisasi dalam perencanaan, pengawasan, dan manajemen proyek">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://marchelvicthor.com">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👷</text></svg>">
+  <title>Marchel Victhor Kamagi - Professional Engineer & Supervisor</title>
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Splash screen -->
-  <div id="splash">
-    <canvas id="particles"></canvas>
-    <img src="logo_bg_white.png" alt="Logo SmoKey">
-    <h1 class="neon-text">SMOKEY</h1>
-    <p id="typing-text" class="neon-text"></p>
-    <div class="welcome neon-text">Welcome</div>
+  <!-- Splash Screen -->
+  <div id="splash" role="status" aria-label="Memuat portofolio">
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div class="splash-content">
+      <div class="logo-animation" aria-hidden="true">
+        <div class="gear gear-1">
+          <i class="fas fa-cog" aria-hidden="true"></i>
+        </div>
+        <div class="gear gear-2">
+          <i class="fas fa-cog" aria-hidden="true"></i>
+        </div>
+        <div class="main-logo">
+          <i class="fas fa-hard-hat" aria-hidden="true"></i>
+        </div>
+      </div>
+      <h1 class="neon-text">MARchel Victhor</h1>
+      <p id="typing-text" class="neon-text" aria-live="polite"></p>
+      <div class="welcome neon-text">Professional Engineer & Supervisor</div>
+      <div class="loading-bar" role="progressbar" aria-label="Progress loading" aria-valuemin="0" aria-valuemax="100">
+        <div class="loading-progress"></div>
+      </div>
+    </div>
   </div>
 
-  <div class="layout" style="display:none; flex-direction: column; min-height: 100vh;">
-    <header>
-      <div class="logo-container">
-        <img src="logo_bg_white.png" alt="Logo" />
-        <span class="logo-text">SMOKEY</span>
+  <!-- Main Layout -->
+  <div class="layout" style="display:none;">
+    <!-- Header -->
+    <header role="banner">
+      <div class="header-background" aria-hidden="true">
+        <div class="header-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+        </div>
       </div>
-      <nav>
-        <a href="#" onclick="tampilkanSection('tentang')">Tentang Saya</a>
-        <a href="#" onclick="tampilkanSection('produk')">Produk</a>
-        <a href="#" onclick="tampilkanSection('layanan')">Layanan</a>
-        <a href="#" onclick="tampilkanSection('kontak')">Kontak</a>
-        <a href="#" onclick="tampilkanSection('Motifasi')">Motivasi</a>
-      </nav>
+      <div class="header-content">
+        <div class="logo-container">
+          <a href="#tentang" class="logo-animated" onclick="tampilkanSection('tentang'); return false;">
+            <div class="logo-icon">
+              <i class="fas fa-hard-hat" aria-hidden="true"></i>
+            </div>
+            <div class="logo-text">
+              <span class="logo-main">Mr_Achel</span>
+              <span class="logo-sub">Victhor</span>
+            </div>
+          </a>
+        </div>
+        
+        <nav role="navigation" aria-label="Navigasi utama">
+          <a href="#tentang" onclick="tampilkanSection('tentang'); return false;" class="nav-link">
+            <i class="fas fa-user" aria-hidden="true"></i>
+            <span>Tentang</span>
+          </a>
+          <a href="#cerita-karir" onclick="tampilkanSection('cerita-karir'); return false;" class="nav-link">
+            <i class="fas fa-road" aria-hidden="true"></i>
+            <span>Perjalanan</span>
+          </a>
+          <a href="#pendidikan" onclick="tampilkanSection('pendidikan'); return false;" class="nav-link">
+            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+            <span>Pendidikan</span>
+          </a>
+          <a href="#pengalaman" onclick="tampilkanSection('pengalaman'); return false;" class="nav-link">
+            <i class="fas fa-briefcase" aria-hidden="true"></i>
+            <span>Pengalaman</span>
+          </a>
+          <a href="#keahlian" onclick="tampilkanSection('keahlian'); return false;" class="nav-link">
+            <i class="fas fa-chart-bar" aria-hidden="true"></i>
+            <span>Keahlian</span>
+          </a>
+          <a href="#layanan" onclick="tampilkanSection('layanan'); return false;" class="nav-link">
+            <i class="fas fa-concierge-bell" aria-hidden="true"></i>
+            <span>Layanan</span>
+          </a>
+          <a href="#kontak" onclick="tampilkanSection('kontak'); return false;" class="nav-link">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <span>Kontak</span>
+          </a>
+        </nav>
+        
+        <div class="header-actions">
+          <button class="theme-toggle" onclick="toggleTheme()" aria-label="Ubah tema">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </button>
+          <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
     </header>
 
-    <main style="flex:1;">
-      <section id="tentang" class="konten aktif">
-        <h2>Tentang Saya</h2>
-        <p>
-          Saya adalah seorang <strong>Engineer</strong> dengan latar belakang pendidikan dan pengalaman
-          yang solid di bidang <strong>Proyek, Mesin, dan Listrik</strong>...
-        </p>
-      </section>
-
-      <section id="layanan" class="konten">
-        <h2>Layanan</h2>
-        <ul>
-          <li>Konsultasi Proyek Teknik Sipil</li>
-          <li>Perencanaan & Pengawasan Teknik</li>
-          <li>Instalasi & Pemeliharaan Listrik</li>
-          <li>Asisten Teknis & Manajerial</li>
-          <li>Solusi Inovatif untuk Masalah Teknis</li>
-          <li>Pembuatan Website (Company Profile, Portofolio, Toko Online, dll.)</li>
-        </ul>
-      </section>
-
-      <section id="produk" class="konten">
-        <h2>Produk</h2>
-        <div class="horizontal-scroll">
-          <div class="card">
-            <img src="gambar1.jpg" alt="Produk" />
-            <div class="content">
-              <h3>Produk Belum Tersedia</h3>
-              <p>_____</p>
+    <main role="main">
+      <!-- Section: Tentang Saya -->
+      <section id="tentang" class="konten aktif" aria-labelledby="tentang-title">
+        <div class="hero-section">
+          <div class="container">
+            <div class="hero-content">
+              <div class="hero-text">
+                <h1 class="hero-title" id="tentang-title">
+                  <span class="title-line">Marchel Victhor</span>
+                  <span class="title-line accent">Kamagi</span>
+                </h1>
+                <h2 class="hero-subtitle">Professional Engineer & Supervisor</h2>
+                <p class="hero-description">
+                  Ahli Struktur Konstruksi dengan spesialisasi dalam perencanaan, pengawasan, 
+                  dan manajemen proyek jalan, jembatan, dan gedung.
+                </p>
+                <div class="hero-actions">
+                  <button class="btn-primary" onclick="tampilkanSection('kontak')">
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                    Hubungi Saya
+                  </button>
+                  <button class="btn-secondary" onclick="tampilkanSection('layanan')">
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                    Lihat Layanan
+                  </button>
+                </div>
+              </div>
+              <div class="hero-image">
+                <div class="profile-card">
+                  <div class="profile-image">
+                    <img src="Profile.jpg" alt="Marchel Victhor Kamagi - Professional Engineer" 
+                         onerror="this.style.display='none'" loading="lazy">
+                    <div class="image-fallback" aria-hidden="true">
+                      <i class="fas fa-user-hard-hat"></i>
+                    </div>
+                  </div>
+                  <div class="profile-badge">
+                    <i class="fas fa-award" aria-hidden="true"></i>
+                    <span>Professional Engineer</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="card">
-            <img src="gambar2.jpg" alt="Produk" />
-            <div class="content">
-              <h3>Produk Belum Tersedia</h3>
-              <p>_____</p>
+        </div>
+
+        <div class="container">
+          <div class="about-content">
+            <div class="about-text">
+              <h3>Profil Profesional</h3>
+              <p>Saya adalah seorang <strong>Engineer Professional</strong> dengan latar belakang pendidikan dan pengalaman yang solid di bidang <strong>Teknik Sipil, Proyek Konstruksi, dan Supervisi</strong>. Memiliki pengalaman selama 2 tahun sebagai Konsultan Supervisi/Pengawas dengan keahlian khusus dalam struktur konstruksi bangunan, jalan, jembatan, dan gedung.</p>
+              
+              <p>Ahli dalam manajemen bahan, pekerja, dan waktu serta berpengalaman dalam pengolahan data besar dengan Excel, Word, Google Drive. Selalu tertantang untuk menghadapi masalah kompleks dan menemukan solusi inovatif.</p>
             </div>
-          </div>
-          <div class="card">
-            <img src="gambar3.jpg" alt="Produk" />
-            <div class="content">
-              <h3>Produk Belum Tersedia</h3>
-              <p>_____</p>
+            
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                </div>
+                <div class="stat-info">
+                  <span class="stat-number">6+</span>
+                  <span class="stat-label">Tahun Pengalaman</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                </div>
+                <div class="stat-info">
+                  <span class="stat-number">20+</span>
+                  <span class="stat-label">Proyek Diselesaikan</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-users" aria-hidden="true"></i>
+                </div>
+                <div class="stat-info">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label">Kepuasan Klien</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-certificate" aria-hidden="true"></i>
+                </div>
+                <div class="stat-info">
+                  <span class="stat-number">4</span>
+                  <span class="stat-label">Sertifikasi</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="kontak" class="konten">
-        <h2>Kontak</h2>
-        <p>Email: achelsmoky@gmail.com</p>
-        <p>Telepon: 0853-9693-9123</p>
-        <p>Alamat: Manado, Indonesia</p>
+      <!-- Section: Cerita Karir -->
+<section id="cerita-karir" class="konten" aria-labelledby="cerita-karir-title">
+  <div class="container">
+    <h2 class="section-title" id="cerita-karir-title">Perjalanan Karier Saya</h2>
+    
+    <div class="career-timeline">
+      <!-- SMK & PKL -->
+      <article class="career-item">
+        <div class="career-images">
+          <div class="career-image">
+            <img src="images/SMK.jpg" alt="Praktik alat berat di SMK Teknik Alat Berat" loading="lazy"
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWE3M2U4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj7wn5SlIFByYWt0aWsga2VsYXMgYWxhdCBiZXJhdCBTbXVrYXNhIFRla25payBBbGF0IEJlcmF0PC90ZXh0Pjwvc3ZnPg==';">
+            <div class="image-caption">UT Manado</div>
+          </div>
+          <div class="career-image">
+            <img src="images/SMK6.jpg" alt="Sesi belajar teori di kelas SMK" loading="lazy"
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMGQ0N2ExIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj7wn5SlIFNlc2kgYmVsYWphciB0ZW9yaSBkaSBTTUs8L3RleHQ+PC9zdmc+';">
+            <div class="image-caption">Atasi Trouble</div>
+          </div>
+        </div>
+        <div class="career-content">
+          <div class="career-year">2015-2018</div>
+          <h3>Dasar-Dasar Teknik: Masa SMK</h3>
+          <p>Perjalanan saya dimulai di <strong>SMK Teknik Alat Berat</strong> (2015-2018). Pada tahun 2017, saya berkesempatan menjalani <strong>PKL di PT United Tractors Tbk Manado</strong> sebagai Mekanik, di mana saya banyak belajar mengenai:</p>
+          <ul>
+            <li>Sistem alat berat dan komponennya</li>
+            <li>Manajemen perawatan mesin</li>
+            <li>Diagnosis dan perbaikan kerusakan</li>
+            <li>Keselamatan kerja di bengkel alat berat</li>
+          </ul>
+          <blockquote class="quote">
+            <em>"Pengalaman PKL ini memberikan fondasi kuat tentang bagaimana teori diterapkan dalam praktik nyata di industri."</em>
+          </blockquote>
+        </div>
+      </article>
+
+      <!-- Awal Karier Profesional -->
+      <article class="career-item reverse">
+        <div class="career-images">
+          <div class="career-image">
+            <img src="images/BAM1.jpg" alt="Pengujian material konstruksi di laboratorium PT BAM" loading="lazy"
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmY2ZDAwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj7wn5SlIFBlbmd1amlhbiBtYXRlcmlhbCBkaSBsYWJvcmF0b3JpdW08L3RleHQ+PC9zdmc+';">
+            <div class="image-caption">Pengujian material di laboratorium</div>
+          </div>
+          <div class="career-image">
+            <img src="images/BAB2.jpg" alt="Proyek pemeliharaan jalan bersama tim PT BAM" loading="lazy"
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWE3M2U4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj7wn5SlIFByb3llayBwZW1lbGloYXJhYW4gamFsYW4gZGVuZ2FuIHRpbTwvdGV4dD48L3N2Zz4=';">
+            <div class="image-caption">Pengujian tarik Baja Tulangan</div>
+          </div>
+        </div>
+        <div class="career-content">
+          <div class="career-year">2018</div>
+          <h3>Awal Karier Profesional: Laboratorium Technician</h3>
+          <p>Selepas lulus tahun 2018, saya langsung terjun ke dunia profesional bersama <strong>PT BAM</strong> pada proyek Pemeliharaan Jalan dengan posisi <strong>Laboratorium Technician</strong>. Dari sini, saya mulai memahami:</p>
+          <ul>
+            <li>Pengujian material konstruksi</li>
+            <li>Kontrol kualitas dalam pekerjaan konstruksi</li>
+            <li>Standar material untuk proyek jalan</li>
+            <li>Dokumentasi hasil pengujian</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Quality Control & Kuliah -->
+      <article class="career-item">
+        <div class="career-images">
+          <div class="career-image">
+            <img src="images/QC1.jpg" alt="Quality Control di lokasi proyek PT LBI" loading="lazy"
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMGQ0N2ExIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj7wn5SlIFF1YWxpdHkgQ29udHJvbCBkaSBsb2thc2kgcHJveWVrPC90ZXh0Pjwvc3ZnPg==';">
+            <div class="image-caption">Quality Control PT. LBI</div>
+          </div>
+          <div class="career-image">
+            <img src="images/Kulia.jpeg" alt="Aktivitas perkuliahan di kampus UNSRIT" loading="lazy"
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmY2ZDAwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj7wn5SlIEFrdGl2aXRhcyBwZXJrdWxpYWhhbiBkaSBrYW1wdXM8L3RleHQ+PC9zdmc+';">
+            <div class="image-caption">Teknik Sipil</div>
+          </div>
+        </div>
+        <div class="career-content">
+          <div class="career-year">2019</div>
+          <h3>Peningkatan Peran: Quality Control</h3>
+          <p>Tahun 2019 menjadi langkah baru, ketika saya dipercaya sebagai <strong>Quality Control di PT LBI</strong>. Di tahun yang sama, tepatnya Agustus 2019, saya memutuskan untuk melanjutkan pendidikan ke jenjang <strong>Sarjana Teknik Sipil di UNSRIT</strong>.</p>
+          <p>Sambil kuliah, saya aktif mengambil pekerjaan di lapangan, salah satunya sebagai <strong>Tim Survei & Verifikasi Program Hibah Air Minum</strong> (2020–2021) yang mencakup wilayah Sulawesi Utara hingga Gorontalo, sekaligus menangani beberapa proyek pembangunan skala kecil.</p>
+        </div>
+      </article>
+
+      <!-- Kelulusan & Karier Saat Ini -->
+      <article class="career-item reverse">
+        <div class="career-images">
+          <div class="career-image">
+            <img src="images/supervisi 1.jpg" alt="Momen wisuda S1 Teknik Sipil di UNSRIT" loading="lazy"
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWE3M2U4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj7wn5SlIE1vbWVuIHdpc3VkYSBTMSBUZWtuaWsgU2lwaWw8L3RleHQ+PC9zdmc+';">
+            <div class="image-caption">2023</div>
+          </div>
+          <div class="career-image">
+            <img src="images/supervisi.jpg" alt="Bekerja sebagai Administrasi Teknik di perusahaan konsultan" loading="lazy"
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMGQ0N2ExIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj7wn5SlIEJlcmFrZXJqYSBzZWJhZ2FpIEFkbWluaXN0cmFzaSBUZWtuaWs8L3RleHQ+PC9zdmc+';">
+            <div class="image-caption">2024</div>
+          </div>
+        </div>
+        <div class="career-content">
+          <div class="career-year">2023-Sekarang</div>
+          <h3>Puncak Pencapaian: Sarjana & Karier di Konsultan</h3>
+          <p>Perjuangan itu akhirnya terbayar pada <strong>Oktober 2023</strong>, ketika saya resmi menyandang <strong>Gelar S1 Teknik Sipil</strong>. Di tahun yang sama, saya memulai karier di bidang <strong>Konsultan Supervisi/Pengawasan</strong> dengan posisi <strong>Administrasi Teknik</strong>.</p>
+          
+          <div class="responsibility-list">
+            <h4>Dalam peran ini, saya bertanggung jawab untuk:</h4>
+            <ul>
+              <li>Memantau dan mengelola manajemen proyek</li>
+              <li>Mengatur waktu, material, serta pekerjaan di lapangan</li>
+              <li>Menyusun laporan teknis dan progress report</li>
+              <li>Menyiapkan dokumen tagihan berupa Monthly Certificate</li>
+              <li>Koordinasi dengan kontraktor dan stakeholder</li>
+              <li>Memastikan compliance dengan spesifikasi teknis</li>
+            </ul>
+          </div>
+          
+          <blockquote class="quote">
+            <em>"Hingga kini, saya masih dipercaya memegang posisi tersebut, membuktikan komitmen, konsistensi, dan tanggung jawab saya dalam mendukung keberhasilan setiap proyek."</em>
+          </blockquote>
+        </div>
+      </article>
+
+      <!-- Visi Masa Depan -->
+      <article class="career-item">
+        <div class="career-images">
+          <div class="career-image">
+            <img src="logo_bg_white.png" alt="Integrasi teknologi digital dalam industri konstruksi" loading="lazy"
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmY2ZDAwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj7wn5SlIFRla25vbG9naSBkaWdpdGFsIGRhbGFtIGtvbnN0cnVrc2k8L3RleHQ+PC9zdmc+';">
+            <div class="image-caption">Integrasi teknologi digital</div>
+          </div>
+          <div class="career-image">
+            <img src="images/logo.png" alt="Kepemimpinan dan pengembangan tim engineering" loading="lazy"
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWE3M2U4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj7wn5SlIEtlcGVtaW1waW5hbiBkYW4gcGVuZ2VtYmFuZ2FuIHRpbTwvdGV4dD48L3N2Zz4=';">
+            <div class="image-caption">Proses</div>
+          </div>
+        </div>
+        <div class="career-content">
+          <div class="career-year">Masa Depan</div>
+          <h3>Melangkah Maju: Inovasi dan Kepemimpinan</h3>
+          <p>Dengan pengalaman dari level teknis hingga manajerial, saya bercita-cita untuk:</p>
+          <ul>
+            <li>Mengembangkan sistem manajemen proyek yang lebih efisien</li>
+            <li>Memimpin tim engineering yang inovatif</li>
+            <li>Berkontribusi pada pembangunan infrastruktur berkelanjutan</li>
+            <li>Mengintegrasikan teknologi digital dalam pengawasan proyek</li>
+          </ul>
+          <blockquote class="quote">
+            <em>"Setiap tahap dalam perjalanan karier saya adalah pembelajaran berharga yang membentuk profesionalisme dan dedikasi saya di dunia konstruksi."</em>
+          </blockquote>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+      <!-- Section: Pendidikan -->
+      <section id="pendidikan" class="konten" aria-labelledby="pendidikan-title">
+        <div class="container">
+          <h2 class="section-title" id="pendidikan-title">Pendidikan & Kualifikasi</h2>
+          <div class="education-grid">
+            <article class="education-card">
+              <div class="edu-icon">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+              </div>
+              <div class="edu-content">
+                <h3>S1 Teknik Sipil</h3>
+                <p class="edu-year">2019-2023</p>
+                <p class="edu-institution">Universitas Indonesia Tomohon (UNSRIT)</p>
+                <p>Pendidikan tinggi di bidang teknik sipil dengan fokus pada struktur konstruksi, manajemen proyek, dan teknologi material. Lulus pada Oktober 2023.</p>
+                <div class="edu-skills">
+                  <span class="skill-tag">Struktur Bangunan</span>
+                  <span class="skill-tag">Manajemen Proyek</span>
+                  <span class="skill-tag">Teknologi Material</span>
+                  <span class="skill-tag">Perencanaan Konstruksi</span>
+                </div>
+              </div>
+            </article>
+            
+            <article class="education-card">
+              <div class="edu-icon">
+                <i class="fas fa-tools" aria-hidden="true"></i>
+              </div>
+              <div class="edu-content">
+                <h3>SMK Teknik Alat Berat</h3>
+                <p class="edu-year">2015-2018</p>
+                <p class="edu-institution">SMK Teknik Alat Berat</p>
+                <p>Pendidikan kejuruan di bidang alat berat dan mekanik dengan fokus pada operasi, perawatan, dan manajemen alat konstruksi. Termasuk PKL di PT United Tractors Tbk.</p>
+                <div class="edu-skills">
+                  <span class="skill-tag">Operasi Alat Berat</span>
+                  <span class="skill-tag">Mekanik</span>
+                  <span class="skill-tag">Keselamatan Kerja</span>
+                  <span class="skill-tag">Perawatan Mesin</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Pengalaman Kerja Tambahan -->
+          <div class="additional-experience">
+            <h3 class="sub-section-title">Pengalaman Kerja Lainnya</h3>
+            <div class="experience-cards">
+              <article class="mini-exp-card">
+                <div class="mini-exp-icon">
+                  <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                </div>
+                <div class="mini-exp-content">
+                  <h4>Tim Survei & Verifikasi</h4>
+                  <p class="mini-exp-period">2020-2021</p>
+                  <p>Program Hibah Air Minum - Wilayah Sulut & Gorontalo</p>
+                </div>
+              </article>
+              
+              <article class="mini-exp-card">
+                <div class="mini-exp-icon">
+                  <i class="fas fa-hard-hat" aria-hidden="true"></i>
+                </div>
+                <div class="mini-exp-content">
+                  <h4>Quality Control</h4>
+                  <p class="mini-exp-period">2019</p>
+                  <p>PT LBI - Kontrol kualitas proyek konstruksi</p>
+                </div>
+              </article>
+              
+              <article class="mini-exp-card">
+                <div class="mini-exp-icon">
+                  <i class="fas fa-vial" aria-hidden="true"></i>
+                </div>
+                <div class="mini-exp-content">
+                  <h4>Lab Technician</h4>
+                  <p class="mini-exp-period">2018</p>
+                  <p>PT BAM - Proyek Pemeliharaan Jalan</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section id="Motifasi" class="konten">
-        <h2>Motivasi</h2>
-        <p>"Setiap tantangan adalah kesempatan untuk belajar dan tumbuh..."</p>
-        <p>"Keberhasilan bukan hanya tentang apa yang kita capai..."</p>
-        <p>"Di tengah ribuan ketidakmungkinan, selalu ada satu jalan keluar..."</p>
+      <!-- Section: Pengalaman -->
+      <section id="pengalaman" class="konten" aria-labelledby="pengalaman-title">
+        <div class="container">
+          <h2 class="section-title" id="pengalaman-title">Pengalaman Kerja Utama</h2>
+          <div class="experience-grid">
+            <article class="experience-card">
+              <div class="exp-header">
+                <div class="exp-title">
+                  <h3>Administrasi Teknik - Konsultan Supervisi/Pengawasan</h3>
+                  <span class="exp-duration">2023-Sekarang</span>
+                </div>
+                <div class="exp-company">Perusahaan Konsultan Konstruksi</div>
+              </div>
+              <div class="exp-content">
+                <h4>Tanggung Jawab Utama:</h4>
+                <ul>
+                  <li>Memantau dan mengelola manajemen proyek konstruksi</li>
+                  <li>Mengatur waktu, material, serta pekerjaan di lapangan</li>
+                  <li>Menyusun laporan teknis harian, mingguan, dan bulanan</li>
+                  <li>Menyiapkan dokumen tagihan (Monthly Certificate)</li>
+                  <li>Koordinasi dengan kontraktor dan stakeholder proyek</li>
+                  <li>Memastikan compliance dengan spesifikasi teknis</li>
+                  <li>Monitoring progress dan budget proyek</li>
+                </ul>
+                
+                <div class="exp-projects">
+                  <h4>Pencapaian & Kompetensi:</h4>
+                  <div class="project-list">
+                    <div class="project-item">
+                      <span class="project-name">Manajemen Dokumen Proyek</span>
+                      <span class="project-role">Tertib & Akurat</span>
+                    </div>
+                    <div class="project-item">
+                      <span class="project-name">Pengawasan Kualitas</span>
+                      <span class="project-role">Standar Tinggi</span>
+                    </div>
+                    <div class="project-item">
+                      <span class="project-name">Koordinasi Tim</span>
+                      <span class="project-role">Efektif</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Keahlian -->
+      <section id="keahlian" class="konten" aria-labelledby="keahlian-title">
+        <div class="container">
+          <h2 class="section-title" id="keahlian-title">Keahlian & Kompetensi</h2>
+          <div class="skills-grid">
+            <article class="skill-category">
+              <h3><i class="fas fa-drafting-compass" aria-hidden="true"></i> Teknis Konstruksi</h3>
+              <div class="skill-item">
+                <span>Struktur Bangunan</span>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="95"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>Jalan & Jembatan</span>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="90"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>Pengawasan Proyek</span>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="92"></div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="skill-category">
+              <h3><i class="fas fa-tasks" aria-hidden="true"></i> Manajemen</h3>
+              <div class="skill-item">
+                <span>Manajemen Bahan</span>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="88"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>Manajemen Waktu</span>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>Manajemen Pekerja</span>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="87"></div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="skill-category">
+              <h3><i class="fas fa-laptop" aria-hidden="true"></i> Teknologi</h3>
+              <div class="skill-item">
+                <span>Microsoft Excel</span>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="90"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>Microsoft Word</span>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>Google Drive</span>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="88"></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Layanan -->
+      <section id="layanan" class="konten" aria-labelledby="layanan-title">
+        <div class="container">
+          <h2 class="section-title" id="layanan-title">Layanan Profesional</h2>
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-drafting-compass" aria-hidden="true"></i>
+              </div>
+              <h3>Konsultasi Proyek Teknik Sipil</h3>
+              <p>Konsultasi komprehensif untuk proyek konstruksi dari perencanaan hingga implementasi</p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-hard-hat" aria-hidden="true"></i>
+              </div>
+              <h3>Supervisi & Pengawasan</h3>
+              <p>Pengawasan profesional untuk memastikan kualitas dan keselamatan proyek</p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-calculator" aria-hidden="true"></i>
+              </div>
+              <h3>Analisis Struktur</h3>
+              <p>Analisis dan evaluasi struktur bangunan untuk keamanan dan efisiensi</p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-chart-line" aria-hidden="true"></i>
+              </div>
+              <h3>Manajemen Proyek</h3>
+              <p>Pengelolaan proyek konstruksi dengan pendekatan terstruktur</p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-file-contract" aria-hidden="true"></i>
+              </div>
+              <h3>Dokumentasi Teknis</h3>
+              <p>Penyusunan laporan dan dokumentasi proyek yang komprehensif</p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-lightbulb" aria-hidden="true"></i>
+              </div>
+              <h3>Solusi Inovatif</h3>
+              <p>Memberikan solusi kreatif untuk tantangan teknis dalam konstruksi</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Kontak -->
+      <section id="kontak" class="konten" aria-labelledby="kontak-title">
+        <div class="container">
+          <h2 class="section-title" id="kontak-title">Kontak & Koneksi</h2>
+          <div class="contact-content">
+            <div class="contact-info">
+              <article class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Email</h4>
+                  <p><a href="mailto:achelsmoky@gmail.com">achelsmoky@gmail.com</a></p>
+                </div>
+              </article>
+              <article class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Telepon</h4>
+                  <p><a href="tel:+6285396939123">0853-9693-9123</a></p>
+                </div>
+              </article>
+              <article class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Lokasi</h4>
+                  <p>Manado, Indonesia</p>
+                </div>
+              </article>
+              
+              <div class="social-links">
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Instagram">
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://wa.me/6285396939123" class="social-link" aria-label="WhatsApp">
+                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            
+            <article class="motivation-box">
+            <h3>Semangat Pantang Menyerah</h3>
+            <blockquote>
+              <p>"Walau jalan terlihat mustahil, saya tetap melangkah. Lebih baik tahu batas 
+              karena telah mencoba, daripada penasaran karena takut gagal. Setiap rintangan 
+              adalah guru, setiap kegagalan adalah pelajaran, dan setiap keberhasilan adalah 
+              bukti bahwa mustahil itu relatif."</p>
+              <footer class="signature">- Marchel Victhor Kamagi</footer>
+            </blockquote>
+            </article>
+          </div>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2025 SmoKey. Semua Hak Dilindungi.</p>
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <div class="logo-animated small">
+              <div class="logo-icon">
+                <i class="fas fa-hard-hat" aria-hidden="true"></i>
+              </div>
+              <div class="logo-text">
+                <span class="logo-main">MARchel</span>
+                <span class="logo-sub">Victhor</span>
+              </div>
+            </div>
+          </div>
+          <p>&copy; 2025 Marchel Victhor Kamagi. Semua Hak Dilindungi.</p>
+          <div class="footer-links">
+            <a href="#privacy">Kebijakan Privasi</a>
+            <a href="#terms">Syarat & Ketentuan</a>
+          </div>
+        </div>
+      </div>
     </footer>
   </div>
 
